@@ -1,0 +1,14 @@
+.gradient {
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(black, black, white, black, black);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+#blob-motion {
+  position: absolute;
+  transform: translateY(-20%);
+  z-index: 0;
+}
