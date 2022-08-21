@@ -132,42 +132,71 @@
 }
 
 /* Parallax styles below */
-html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+html,
 body {
   margin: 0;
   padding: 0;
-  transform-style: preserve-3d;
-  height: 100%;
   width: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header,
+.title {
+  text-align: center;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 16px;
+}
+.text-container {
+  width: 100%;
 }
 .text {
-  width: 95%;
-  margin: 16px auto;
-  min-height: 400px;
+  width: 75%;
+  margin: 5% auto;
 }
 .parallax1 {
   margin: 0;
   width: 100%;
-  height: 100vh;
-  background-color: blue;
-  color: white;
+  min-height: 500px;
+  background-image: linear-gradient(black, black, white, black, black);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+.caption {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  text-align: center;
+  color: black;
+}
+.caption span.border {
+  background-color: #111;
+  color: white;
+  width: fit-content;
+  font-size: 25px;
+  padding: 18px;
+  letter-spacing: 10px;
 }
 
 .parallax2 {
   width: 100%;
-  height: 100vh;
-  background-color: red;
-  color: white;
+  min-height: 500px;
+  background-image: linear-gradient(white, white, black, white, white);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+footer {
+  color: black;
+  background-color: white;
+  text-align: center;
+  padding: 4px;
 }
