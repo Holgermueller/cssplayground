@@ -1,5 +1,6 @@
 :root {
-  --backgroundColor: ghostwhite;
+  --textColor: #008000;
+  --backgroundColor: #080808;
   --typewriterchars: 26;
   --typewriterspeed: 6s;
 }
@@ -22,6 +23,7 @@ html {
   font-family: "Roboto Mono", monospace;
   font-size: 3rem;
   font-weight: 400;
+  color: var(--textColor);
   margin: auto;
   width: max-content;
   position: relative;
@@ -49,13 +51,14 @@ html {
 
 .name::after {
   width: 0.125em;
-  background: black;
+  background: var(--textColor);
   animation: typewriter var(--typewriterspeed) steps(var(--typewriterchars)) 1s
       forwards,
     blink 750ms steps(var(--typewriterchars)) infinite;
 }
 
 .subtitle {
+  color: var(--textColor);
   margin: auto;
   width: max-content;
   position: relative;
@@ -91,6 +94,7 @@ html {
 }
 
 .chev {
+  color: var(--textColor);
   font-size: 4rem;
   left: 0;
   right: 0;
