@@ -1,3 +1,84 @@
+:root {
+  --backgroundColor: ghostwhite;
+  --typewriterchars: 26;
+  --typewriterspeed: 6s;
+}
+body,
+html {
+  background-color: var(--backgroundColor);
+}
+
+.name {
+  font-family: "Roboto Mono", monospace;
+  font-size: 3rem;
+  font-weight: 400;
+  margin: auto;
+  width: max-content;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.name::before,
+.name::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.name::before {
+  background: var(--backgroundColor);
+  animation: typewriter var(--typewriterspeed) steps(var(--typewriterchars)) 1s
+    forwards;
+}
+
+.name::after {
+  width: 0.125em;
+  background: black;
+  animation: typewriter var(--typewriterspeed) steps(var(--typewriterchars)) 1s
+      forwards,
+    blink 750ms steps(var(--typewriterchars)) infinite;
+}
+
+.subtitle {
+  margin: auto;
+  width: max-content;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 2rem;
+  font-weight: 200;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease calc(var(--typewriterspeed) + 2s) forwards;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .gradient {
   top: 0;
   left: 0;
