@@ -3,6 +3,7 @@
   --backgroundColor: #080808;
   --typewriterchars: 26;
   --typewriterspeed: 6s;
+  --sectionHeight: 100vh;
 }
 body,
 html {
@@ -11,13 +12,13 @@ html {
   background-color: var(--backgroundColor);
 }
 
+h2 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
 .container {
-  height: 100vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+  height: var(--sectionHeight);
 }
 .name {
   font-family: "Roboto Mono", monospace;
@@ -67,8 +68,6 @@ html {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   font-family: "Roboto", sans-serif;
-  font-size: 2rem;
-  font-weight: 200;
   opacity: 0;
   transform: translateY(3rem);
   animation: fadeInUp 2s ease calc(var(--typewriterspeed) + 2s) forwards;
@@ -114,11 +113,47 @@ html {
   }
 }
 
+.about-section {
+  height: var(--sectionHeight);
+  width: 100%;
+  background-image: linear-gradient(var(--backgroundColor), #f8f8ff);
+  position: absolute;
+  font-family: "Roboto", sans-serif;
+}
+
+.text-container {
+  opacity: 0;
+  width: 75%;
+  margin: 0 auto;
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+  background-color: #f8f8ff;
+  padding: 8%;
+  border-radius: 5px;
+  z-index: 3;
+  animation: slideInFromLeft 2s ease calc(var(--typewriterspeed) + 2s) forwards;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    margin-left: -100%;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    margin-left: auto;
+  }
+}
+
+.text {
+  font-size: 1.25rem;
+}
+
 .gradient {
   top: 0;
   left: 0;
   background-color: black;
-  /* background-image: linear-gradient(black, black, white, black, black); */
   position: absolute;
   height: 100%;
   width: 100%;
@@ -249,21 +284,6 @@ html {
 
 /* Parallax styles below */
 
-.header,
-.title {
-  text-align: center;
-  background-color: black;
-  color: white;
-  margin: 0;
-  padding: 16px;
-}
-.text-container {
-  width: 100%;
-}
-.text {
-  width: 75%;
-  margin: 5% auto;
-}
 .parallax1 {
   margin: 0;
   width: 100%;
