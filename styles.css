@@ -171,12 +171,13 @@ h2 {
   background-color: transparent;
   padding: 8%;
   border-radius: 5px;
-  perspective: 500px;
+  position: absolute;
+  perspective: 1000px;
   border: 1px solid var(--backgroundColor);
 }
 
 .confession-card-inner {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
   transition: transform 1s;
