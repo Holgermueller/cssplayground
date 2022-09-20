@@ -118,16 +118,15 @@ h2 {
   height: var(--sectionHeight);
   width: 100%;
   background-image: linear-gradient(var(--backgroundColor), #f8f8ff);
-  position: absolute;
   font-family: "Roboto", sans-serif;
+  display: grid;
+  place-items: center;
+  align-content: center;
 }
 
-.text-container {
+.text-card {
   width: 75%;
   margin: 0 auto;
-  top: 50%;
-  position: relative;
-  transform: translateY(-50%);
   background-color: #f8f8ff;
   padding: 8%;
   border-radius: 5px;
@@ -137,10 +136,81 @@ h2 {
   font-size: 1.25rem;
 }
 
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion) {
+  .hidden {
+    transition: none;
+  }
+}
+
+.confession-section {
+  height: var(--sectionHeight);
+  background-color: #f8f8ff;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.confession-card {
+  width: 75%;
+  height: 25vh;
+  margin: 0 auto;
+  background-color: transparent;
+  padding: 8%;
+  border-radius: 5px;
+  perspective: 500px;
+  border: 1px solid var(--backgroundColor);
+}
+
+.confession-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.confession-card:hover,
+.confession-card-inner {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+.confession-card-front,
+.confession-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.confession-card-front {
+  text-align: center;
+  background-color: var(--backgroundColor);
+  color: #f8f8ff;
+}
+
+.confession-card-back {
+  transform: rotateY(180deg);
+}
+
 .gradient {
   top: 0;
   left: 0;
-  background-color: black;
+  /* background-color: black; */
   position: absolute;
   height: 100%;
   width: 100%;

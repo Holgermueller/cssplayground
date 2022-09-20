@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script defer src="app.js"></script>
 
     <title>CSS Playground</title>
   </head>
@@ -25,7 +26,7 @@
     </section>
 
     <section id="gradient" class="about-section">
-      <div class="text-container">
+      <div class="text-card hidden">
         <h2>About</h2>
         <p class="text">
           I've learned some cool CSS tricks, but can't think of an organic
@@ -36,6 +37,27 @@
           who look at this can probably do this kind of coding in their sleep.
           But I think they're cool, and I want a place to show them off.
         </p>
+      </div>
+    </section>
+
+    <section class="confession-section">
+      <div class="confession-card">
+        <div class="confession-card-inner">
+          <div class="confession-card-front">
+            <h2>A Small Confession</h2>
+          </div>
+
+          <div class="confession-card-back">
+            <p class="text">
+              Is there some javascript involoved in some of this?
+            </p>
+            <p class="text">
+              Yes. That previous section used javascript in order to detect when
+              the section is in the viewport. The actual fade in effect is CSS.
+            </p>
+            <p class="text">And so is this card.</p>
+          </div>
+        </div>
       </div>
     </section>
 
