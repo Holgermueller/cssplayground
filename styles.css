@@ -27,6 +27,15 @@ h2 {
 section {
   height: var(--sectionHeight);
 }
+
+.about-section,
+.confession-section,
+.spatial-audio-section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+}
+
 .name {
   font-family: "Roboto Mono", monospace;
   font-size: 3rem;
@@ -122,9 +131,6 @@ section {
 .about-section {
   width: 100%;
   background-image: linear-gradient(var(--backgroundColor), #f8f8ff);
-  display: grid;
-  place-items: center;
-  align-content: center;
 }
 
 .text-card {
@@ -156,9 +162,6 @@ section {
 
 .confession-section {
   background-color: #f8f8ff;
-  display: grid;
-  place-items: center;
-  align-content: center;
 }
 
 .confession-card {
@@ -204,11 +207,8 @@ section {
   transform: rotateY(180deg);
 }
 
-.spatial-audio {
+.spatial-audio-section {
   background-color: pink;
-  display: grid;
-  place-items: center;
-  align-content: center;
 }
 
 .gradient {
