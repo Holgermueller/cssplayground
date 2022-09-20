@@ -173,19 +173,18 @@ h2 {
   border-radius: 5px;
   position: absolute;
   perspective: 1000px;
-  border: 1px solid var(--backgroundColor);
+  border: 1px solid #f1f1f1;
 }
 
 .confession-card-inner {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   transition: transform 1s;
   transform-style: preserve-3d;
 }
 
-.confession-card:hover,
-.confession-card-inner {
+.confession-card:hover .confession-card-inner {
   transform: rotateY(180deg);
   transition: transform 0.5s;
 }
