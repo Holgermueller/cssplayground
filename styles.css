@@ -16,9 +16,15 @@ html {
 h2 {
   font-size: 2rem;
   font-weight: 300;
+  font-family: "Roboto", sans-serif;
 }
 
-.container {
+.text {
+  font-size: 1.25rem;
+  font-family: "Roboto", sans-serif;
+}
+
+section {
   height: var(--sectionHeight);
 }
 .name {
@@ -68,7 +74,6 @@ h2 {
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-  font-family: "Roboto", sans-serif;
   opacity: 0;
   transform: translateY(3rem);
   animation: fadeInUp 2s ease calc(var(--typewriterspeed) + 2s) forwards;
@@ -115,10 +120,8 @@ h2 {
 }
 
 .about-section {
-  height: var(--sectionHeight);
   width: 100%;
   background-image: linear-gradient(var(--backgroundColor), #f8f8ff);
-  font-family: "Roboto", sans-serif;
   display: grid;
   place-items: center;
   align-content: center;
@@ -130,10 +133,6 @@ h2 {
   background-color: #f8f8ff;
   padding: 8%;
   border-radius: 5px;
-}
-
-.text {
-  font-size: 1.25rem;
 }
 
 .hidden {
@@ -156,12 +155,10 @@ h2 {
 }
 
 .confession-section {
-  height: var(--sectionHeight);
   background-color: #f8f8ff;
   display: grid;
   place-items: center;
   align-content: center;
-  font-family: "Roboto", sans-serif;
 }
 
 .confession-card {
@@ -205,6 +202,13 @@ h2 {
 
 .confession-card-back {
   transform: rotateY(180deg);
+}
+
+.spatial-audio {
+  background-color: pink;
+  display: grid;
+  place-items: center;
+  align-content: center;
 }
 
 .gradient {
