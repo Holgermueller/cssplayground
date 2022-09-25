@@ -30,7 +30,9 @@ section {
 
 .about-section,
 .confession-section,
-.spatial-audio-section {
+.cool-border-section,
+.sunburst-section,
+.neon-section {
   display: grid;
   place-items: center;
   align-content: center;
@@ -207,8 +209,29 @@ section {
   transform: rotateY(180deg);
 }
 
-.spatial-audio-section {
-  background-color: pink;
+.content {
+  background-color: var(--backgroundColor);
+  color: #f8f8ff;
+  width: max-content;
+  height: max-content;
+  border-radius: 15px;
+  border: 8px solid;
+  padding: 18px;
+  border-image: linear-gradient(red, blue, green) 25;
+}
+
+.sunburst-section {
+  background: radial-gradient(closest-side, #3f87a6, #ebf8e1, #f69d3c);
+}
+
+.neon-content {
+  background-color: var(--backgroundColor);
+  color: #f8f8ff;
+  width: max-content;
+  height: max-content;
+  border-radius: 15px;
+  border: 8px solid;
+  padding: 18px;
 }
 
 .gradient {
