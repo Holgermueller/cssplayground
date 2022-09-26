@@ -1,6 +1,7 @@
 :root {
   --textColor: #008000;
   --backgroundColor: #080808;
+  --otherTextColor: #f8f8ff;
   --typewriterchars: 26;
   --typewriterspeed: 6s;
   --sectionHeight: 100vh;
@@ -32,7 +33,9 @@ section {
 .confession-section,
 .cool-border-section,
 .sunburst-section,
-.neon-section {
+.neon-section,
+.image-section,
+.shimmer-section {
   display: grid;
   place-items: center;
   align-content: center;
@@ -217,7 +220,7 @@ section {
   border-radius: 15px;
   border: 8px solid;
   padding: 18px;
-  border-image: linear-gradient(red, blue, green) 25;
+  border-image: linear-gradient(to right, red, green, blue) 25;
 }
 
 .sunburst-section {
@@ -226,12 +229,44 @@ section {
 
 .neon-content {
   background-color: var(--backgroundColor);
-  color: #f8f8ff;
+  color: HSL(114, 96.1%, 59.6%);
   width: max-content;
   height: max-content;
   border-radius: 15px;
   border: 8px solid;
   padding: 18px;
+  text-shadow: 0 0 0.125rem HSL(114, 96.1%, 59.6%),
+    0 0 0.45rem HSL(114, 96.1%, 59.6%);
+  box-shadow: inset 0 0 0.5em 0 HSL(114, 96.1%, 59.6%),
+    0 0 0.5em 0 HSL(114, 96.1%, 59.6%);
+  position: relative;
+}
+
+.neon-content::before {
+  content: "";
+  position: absolute;
+  background: HSL(114, 96.1%, 59.6%);
+  top: 120%;
+  height: 50%;
+  width: 100%;
+  transform: perspective(1rem) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.7;
+}
+
+.mirror {
+  transform: rotateX(180deg);
+  filter: blur(1rem);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.shimmer-content {
+  color: var(--otherTextColor);
+  font-size: 3rem;
+  font-weight: 300;
+  border: 2px solid;
+  border-radius: 0.25rem;
+  padding: 1rem;
 }
 
 .gradient {
