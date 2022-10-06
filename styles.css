@@ -28,15 +28,15 @@ h2 {
 section {
   height: var(--sectionHeight);
 }
-
+.container,
 .about-section,
 .confession-section,
 .cool-border-section,
 .sunburst-section,
 .neon-section,
 .image-section,
-.shimmer-section,
-.hexagon-section {
+.cool-gradient-transition,
+.shimmer-section {
   display: grid;
   place-items: center;
   align-content: center;
@@ -50,10 +50,6 @@ section {
   margin: auto;
   width: max-content;
   position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .name::before,
@@ -86,8 +82,6 @@ section {
   width: max-content;
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   opacity: 0;
   transform: translateY(3rem);
@@ -285,56 +279,58 @@ section {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), #fff);
 }
 
+.cool-gradient-transition {
+  background-image: linear-gradient(45deg, red, blue, green);
+  background-size: 300%;
+  animation: gradient-animation 10s infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: left;
+  }
+  50% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+.gradient-content {
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 3rem;
+  border-radius: 15px;
+}
+
+.gradient-section-text {
+  font-weight: bolder;
+}
+
 .shimmer-content {
-  color: var(--otherTextColor);
+  border-radius: 15px;
+  border: 18px solid;
+  padding: 18px;
+  border-image: linear-gradient(90deg, grey, grey, white, grey, grey) 25;
+  animation: shimmer 1s infinite;
+}
+
+.shimmer-text {
   font-size: 3rem;
-  font-weight: 300;
-  border: 2px solid;
-  border-radius: 0.25rem;
-  padding: 1rem;
+  font-weight: bolder;
+  padding: 3rem;
+  color: transparent;
+  background-image: linear-gradient(90deg, grey, grey, white, grey, grey);
+  animation: shimmer 1s infinite;
 }
 
-.hexagon-section {
-  background-color: #3f87a6;
-}
-
-.hexagon::before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-bottom: 30px solid #6c6;
-  border-left: 52px solid transparent;
-  border-right: 52px solid transparent;
-  position: absolute;
-  top: -30px;
-}
-
-.hexagon {
-  margin-top: 30px;
-  width: 104px;
-  height: 60px;
-  background-color: #6c6;
-  position: relative;
-}
-
-.hexagon::after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 30px solid #6c6;
-  border-left: 52px solid transparent;
-  border-right: 52px solid transparent;
-  position: absolute;
-  bottom: -30px;
-}
-
-.test {
-  height: 100px;
-  width: 100px;
-  margin: 4px;
-  display: inline-block;
-  background: red;
-  clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+@keyframes shimmer {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
 }
 
 footer {
