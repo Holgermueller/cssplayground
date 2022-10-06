@@ -307,21 +307,21 @@ section {
   font-weight: bolder;
 }
 
-.shimmer-content {
-  border-radius: 15px;
-  border: 18px solid;
+.shimmer-border {
+  position: relative;
+  --borderWidth: 18px;
+  border-style: solid;
+  background-image: linear-gradient(90deg, grey, grey, white, grey, grey);
+  background-size: 300%;
   padding: 18px;
-  border-image: linear-gradient(90deg, grey, grey, white, grey, grey) 25;
-  animation: shimmer 1s infinite;
+  border-radius: var(--borderWidth);
+  animation: shimmer 1s linear infinite;
 }
 
 .shimmer-text {
   font-size: 3rem;
   font-weight: bolder;
   padding: 3rem;
-  color: transparent;
-  background-image: linear-gradient(90deg, grey, grey, white, grey, grey);
-  animation: shimmer 1s infinite;
 }
 
 @keyframes shimmer {
