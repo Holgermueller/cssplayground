@@ -36,7 +36,8 @@ section {
 .neon-section,
 .image-section,
 .cool-gradient-transition,
-.shimmer-section {
+.shimmer-section,
+.slanted-text-section {
   display: grid;
   place-items: center;
   align-content: center;
@@ -331,6 +332,32 @@ section {
   100% {
     background-position: right;
   }
+}
+
+.slanted-text-section {
+  color: red;
+}
+.text-holder-circle,
+.text-holder-box {
+  border: 10px solid red;
+}
+.text-holder-circle {
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  position: absolute;
+}
+.text-holder-box {
+  height: max-content;
+  width: max-content;
+  transform: skew(-15deg, -15deg);
+  position: relative;
+}
+
+.text-to-slant {
+  font-weight: bold;
+  font-size: 6rem;
+  margin: 0;
 }
 
 footer {
